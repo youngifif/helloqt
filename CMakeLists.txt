@@ -19,8 +19,15 @@ else()
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
     
     message(STATUS "!!! Using  dynamic library to build")
-    message(STATUS "!!! After Build,remember to run cmd: %VCPKG_ROOT%\\installed\\x64-windows\\tools\\Qt6\\bin\\windeployqt.exe helloqt.exe")
+    
+
+    
+
 endif()
+
+
+
+
 
 
 project(helloqt VERSION 1.0.0 LANGUAGES CXX)
@@ -31,5 +38,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Gui)
 qt_standard_project_setup()
+
+SET(WINDEPLOYQT 
+$<IF:$<CONFIG:Release>,$ENV{VCPKG_ROOT}/installed/x64-windows/tools/Qt6/bin/windeployqt.exe,$ENV{VCPKG_ROOT}/installed/x64-windows/tools/Qt6/bin/windeployqt.debug.bat>
+)
+
 
 add_subdirectory(src/app)
