@@ -45,14 +45,12 @@ For Release-dynamic
 ```
 cmake -S .  --preset "vs2022" -DUSE_STATIC_LIBS=OFF
 cmake --build --preset  "vs2022-rel"
-%VCPKG_ROOT%/installed/x64-windows/tools/Qt6/bin/windeployqt.exe out/build/vs2022/Release/helloqt.exe"
 ```
 
 For Debug-dynamic (use windeployqt.debug.bat,not windeployqt.exe)
 ```
 cmake -S . --preset "vs2022"  -DUSE_STATIC_LIBS=OFF
 cmake --build --preset  "vs2022-dbg"
-%VCPKG_ROOT%\\installed\\x64-windows\\tools\\Qt6\\bin\\windeployqt.debug.bat helloqt.exe
 ```
 
 
