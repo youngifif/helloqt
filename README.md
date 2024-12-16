@@ -47,7 +47,7 @@ cmake -S .  --preset "vs2022" -DUSE_STATIC_LIBS=OFF
 cmake --build --preset  "vs2022-rel"
 ```
 
-For Debug-dynamic (use windeployqt.debug.bat,not windeployqt.exe)
+For Debug-dynamic 
 ```
 cmake -S . --preset "vs2022"  -DUSE_STATIC_LIBS=OFF
 cmake --build --preset  "vs2022-dbg"
